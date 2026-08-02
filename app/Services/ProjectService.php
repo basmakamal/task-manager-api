@@ -11,6 +11,7 @@ class ProjectService
     public function listForUser(User $user, array $filters = []): LengthAwarePaginator
     {
         return $user->projects()
+            ->withCount('tasks')
             ->when($filters['status'] ?? null, fn ($query, $status) => $query->where('status', $status))
             ->latest()
             ->paginate($filters['per_page'] ?? 10);

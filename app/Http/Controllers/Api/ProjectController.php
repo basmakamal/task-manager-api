@@ -47,7 +47,7 @@ class ProjectController extends Controller
     {
         $this->authorize('view', $project);
 
-        return new ProjectResource($project);
+        return new ProjectResource($project->loadCount('tasks'));
     }
 
     public function update(UpdateProjectRequest $request, Project $project): ProjectResource

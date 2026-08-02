@@ -5,16 +5,20 @@ namespace App\Http\Resources;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProjectResource extends JsonResource
+class TaskResource extends JsonResource
 {
     public function toArray(Request $request): array
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
+            'project_id' => $this->project_id,
+            'title' => $this->title,
             'description' => $this->description,
+            'priority' => $this->priority,
             'status' => $this->status,
-            'tasks_count' => $this->whenCounted('tasks'),
+            'due_date' => $this->due_date?->toDateString(),
+            'is_overdue' => $this->isOverdue(),
+            'project' => new ProjectResource($this->whenLoaded('project')),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
