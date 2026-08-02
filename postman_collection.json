@@ -5,12 +5,12 @@
             "key": "baseUrl",
             "type": "string",
             "name": "string",
-            "value": "http:\/\/localhost"
+            "value": "http:\/\/127.0.0.1:8000"
         }
     ],
     "info": {
         "name": "Task Manager API Documentation",
-        "_postman_id": "5e5883f7-4cb9-4bd0-bfa9-1f3660c8a13b",
+        "_postman_id": "72d9fe0f-8e5f-4395-81ba-2f2d08225663",
         "description": "REST API for managing projects and tasks.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -198,7 +198,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"archived\",\"per_page\":21}"
+                            "raw": "{\"status\":\"completed\",\"per_page\":21}"
                         },
                         "description": ""
                     },
@@ -335,7 +335,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"status\":\"active\"}"
+                            "raw": "{\"name\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"status\":\"archived\"}"
                         },
                         "description": ""
                     },
@@ -488,7 +488,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"priority\":\"high\",\"status\":\"todo\",\"due_date\":\"2026-08-02T02:57:31\"}"
+                            "raw": "{\"title\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"priority\":\"high\",\"status\":\"todo\",\"due_date\":\"2026-08-02T03:08:24\"}"
                         },
                         "description": ""
                     },
@@ -647,7 +647,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"priority\":\"low\",\"status\":\"done\",\"due_date\":\"2026-08-02T02:57:31\"}"
+                            "raw": "{\"title\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"priority\":\"low\",\"status\":\"in_progress\",\"due_date\":\"2026-08-02T03:08:24\"}"
                         },
                         "description": ""
                     },

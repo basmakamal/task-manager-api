@@ -5,7 +5,7 @@ info:
   version: 1.0.0
 servers:
   -
-    url: 'http://localhost'
+    url: 'http://127.0.0.1:8000'
 tags:
   -
     name: Authentication
@@ -171,7 +171,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: archived
+                  example: completed
                   enum:
                     - active
                     - completed
@@ -263,7 +263,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: active
+                  example: archived
                   enum:
                     - active
                     - completed
@@ -391,7 +391,7 @@ paths:
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-08-02T02:57:31'
+                  example: '2026-08-02T03:08:24'
                   nullable: true
               required:
                 - title
@@ -521,7 +521,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: done
+                  example: in_progress
                   enum:
                     - todo
                     - in_progress
@@ -529,7 +529,7 @@ paths:
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-08-02T02:57:31'
+                  example: '2026-08-02T03:08:24'
                   nullable: true
     delete:
       summary: 'Delete a task'

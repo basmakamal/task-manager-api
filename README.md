@@ -59,6 +59,8 @@ Interactive docs (generated with Scribe) are available at **`/docs`** once the s
 - `postman_collection.json` — import into Postman (also served at `/docs.postman`)
 - `openapi.yaml` — OpenAPI 3 spec (also served at `/docs.openapi`)
 
+The "Try It Out" buttons send requests to `APP_URL`, which is set to `http://127.0.0.1:8000` (the `php artisan serve` default). If you serve the app elsewhere, update `APP_URL` and run `php artisan scribe:generate` again.
+
 ### Endpoints overview
 
 All routes are prefixed with `/api`. Everything except register/login requires an `Authorization: Bearer <token>` header.

@@ -204,7 +204,7 @@ endpoints:
         name: due_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-08-02T02:57:31'
+        example: '2026-08-02T03:08:24'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -215,7 +215,7 @@ endpoints:
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
       priority: high
       status: todo
-      due_date: '2026-08-02T02:57:31'
+      due_date: '2026-08-02T03:08:24'
     fileParameters: []
     responses: []
     responseFields: []
@@ -458,7 +458,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: done
+        example: in_progress
         type: string
         enumValues:
           - todo
@@ -472,7 +472,7 @@ endpoints:
         name: due_date
         description: 'Must be a valid date.'
         required: false
-        example: '2026-08-02T02:57:31'
+        example: '2026-08-02T03:08:24'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -482,8 +482,8 @@ endpoints:
       title: vmqeopfuudtdsufvyvddq
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
       priority: low
-      status: done
-      due_date: '2026-08-02T02:57:31'
+      status: in_progress
+      due_date: '2026-08-02T03:08:24'
     fileParameters: []
     responses: []
     responseFields: []

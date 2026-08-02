@@ -60,7 +60,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: archived
+        example: completed
         type: string
         enumValues:
           - active
@@ -81,7 +81,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      status: archived
+      status: completed
       per_page: 21
     fileParameters: []
     responses:
@@ -302,7 +302,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: active
+        example: archived
         type: string
         enumValues:
           - active
@@ -314,7 +314,7 @@ endpoints:
     cleanBodyParameters:
       name: vmqeopfuudtdsufvyvddq
       description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      status: active
+      status: archived
     fileParameters: []
     responses: []
     responseFields: []
