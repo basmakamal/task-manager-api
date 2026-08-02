@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\DashboardController;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\TaskController;
 use Illuminate\Support\Facades\Route;
@@ -16,4 +17,6 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/projects/{project}/tasks', [TaskController::class, 'indexForProject']);
     Route::post('/projects/{project}/tasks', [TaskController::class, 'store']);
     Route::apiResource('tasks', TaskController::class)->only(['index', 'show', 'update', 'destroy']);
+
+    Route::get('/dashboard', DashboardController::class);
 });
