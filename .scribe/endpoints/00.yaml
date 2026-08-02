@@ -61,10 +61,22 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      password_confirmation:
+        custom: []
+        name: password_confirmation
+        description: 'Must match password.'
+        required: true
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
     cleanBodyParameters:
       name: 'John Doe'
       email: john@example.com
       password: password123
+      password_confirmation: password123
     fileParameters: []
     responses: []
     responseFields: []

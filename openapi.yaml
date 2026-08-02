@@ -57,10 +57,15 @@ paths:
                   type: string
                   description: 'Minimum 8 characters.'
                   example: password123
+                password_confirmation:
+                  type: string
+                  description: 'Must match password.'
+                  example: password123
               required:
                 - name
                 - email
                 - password
+                - password_confirmation
       security: []
   /api/login:
     post:
@@ -171,7 +176,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: active
+                  example: completed
                   enum:
                     - active
                     - completed

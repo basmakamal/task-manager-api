@@ -58,7 +58,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: active
+        example: completed
         type: string
         enumValues:
           - active
@@ -79,7 +79,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      status: active
+      status: completed
       per_page: 21
     fileParameters: []
     responses:

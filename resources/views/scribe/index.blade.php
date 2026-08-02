@@ -193,7 +193,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --data "{
     \"name\": \"John Doe\",
     \"email\": \"john@example.com\",
-    \"password\": \"password123\"
+    \"password\": \"password123\",
+    \"password_confirmation\": \"password123\"
 }"
 </code></pre></div>
 
@@ -211,7 +212,8 @@ const headers = {
 let body = {
     "name": "John Doe",
     "email": "john@example.com",
-    "password": "password123"
+    "password": "password123",
+    "password_confirmation": "password123"
 };
 
 fetch(url, {
@@ -331,6 +333,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Minimum 8 characters. Example: <code>password123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password_confirmation</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password_confirmation"                data-endpoint="POSTapi-register"
+               value="password123"
+               data-component="body">
+    <br>
+<p>Must match password. Example: <code>password123</code></p>
         </div>
         </form>
 
@@ -775,7 +789,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"status\": \"active\",
+    \"status\": \"completed\",
     \"per_page\": 21
 }"
 </code></pre></div>
@@ -800,7 +814,7 @@ const headers = {
 };
 
 let body = {
-    "status": "active",
+    "status": "completed",
     "per_page": 21
 };
 
@@ -946,10 +960,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="GETapi-projects"
-               value="active"
+               value="completed"
                data-component="body">
     <br>
-<p>Example: <code>active</code></p>
+<p>Example: <code>completed</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>completed</code></li> <li><code>archived</code></li></ul>
         </div>

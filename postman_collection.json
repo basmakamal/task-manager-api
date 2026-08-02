@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Task Manager API Documentation",
-        "_postman_id": "8fb0341d-c87f-4ef3-9d59-1413f6731bfc",
+        "_postman_id": "0641f633-8e15-48e6-af7c-b7193242ddbf",
         "description": "REST API for managing projects and tasks.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"password123\"}"
+                            "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"password123\",\"password_confirmation\":\"password123\"}"
                         },
                         "description": "Create a new account and get an API token.",
                         "auth": {
@@ -198,7 +198,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"active\",\"per_page\":21}"
+                            "raw": "{\"status\":\"completed\",\"per_page\":21}"
                         },
                         "description": ""
                     },
