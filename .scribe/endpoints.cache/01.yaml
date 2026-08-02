@@ -60,7 +60,7 @@ endpoints:
         name: status
         description: ''
         required: false
-        example: completed
+        example: active
         type: string
         enumValues:
           - active
@@ -81,7 +81,7 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      status: completed
+      status: active
       per_page: 21
     fileParameters: []
     responses:
@@ -133,7 +133,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: vmqeopfuudtdsufvyvddq
+        example: 'Website Redesign'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -144,7 +144,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dolores dolorum amet iste laborum eius est dolor.'
+        example: 'Revamp the marketing site before Q4.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -153,7 +153,7 @@ endpoints:
       status:
         custom: []
         name: status
-        description: ''
+        description: 'One of: active, completed, archived. Defaults to active.'
         required: false
         example: active
         type: string
@@ -165,8 +165,8 @@ endpoints:
         nullable: true
         deprecated: false
     cleanBodyParameters:
-      name: vmqeopfuudtdsufvyvddq
-      description: 'Dolores dolorum amet iste laborum eius est dolor.'
+      name: 'Website Redesign'
+      description: 'Revamp the marketing site before Q4.'
       status: active
     fileParameters: []
     responses: []
@@ -280,7 +280,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: false
-        example: vmqeopfuudtdsufvyvddq
+        example: 'Website Redesign'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -291,7 +291,7 @@ endpoints:
         name: description
         description: ''
         required: false
-        example: 'Dolores dolorum amet iste laborum eius est dolor.'
+        example: 'Updated project scope.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -300,9 +300,9 @@ endpoints:
       status:
         custom: []
         name: status
-        description: ''
+        description: 'One of: active, completed, archived.'
         required: false
-        example: archived
+        example: completed
         type: string
         enumValues:
           - active
@@ -312,9 +312,9 @@ endpoints:
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      name: vmqeopfuudtdsufvyvddq
-      description: 'Dolores dolorum amet iste laborum eius est dolor.'
-      status: archived
+      name: 'Website Redesign'
+      description: 'Updated project scope.'
+      status: completed
     fileParameters: []
     responses: []
     responseFields: []

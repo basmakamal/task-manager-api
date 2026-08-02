@@ -191,9 +191,9 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"email\": \"kunde.eloisa@example.com\",
-    \"password\": \"consequatur\"
+    \"name\": \"John Doe\",
+    \"email\": \"john@example.com\",
+    \"password\": \"password123\"
 }"
 </code></pre></div>
 
@@ -209,9 +209,9 @@ const headers = {
 };
 
 let body = {
-    "name": "vmqeopfuudtdsufvyvddq",
-    "email": "kunde.eloisa@example.com",
-    "password": "consequatur"
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "password123"
 };
 
 fetch(url, {
@@ -303,10 +303,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-register"
-               value="vmqeopfuudtdsufvyvddq"
+               value="John Doe"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>John Doe</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -315,10 +315,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-register"
-               value="kunde.eloisa@example.com"
+               value="john@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>kunde.eloisa@example.com</code></p>
+<p>Must be a valid email address. Must not be greater than 255 characters. Example: <code>john@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -327,10 +327,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-register"
-               value="consequatur"
+               value="password123"
                data-component="body">
     <br>
-<p>Example: <code>consequatur</code></p>
+<p>Minimum 8 characters. Example: <code>password123</code></p>
         </div>
         </form>
 
@@ -351,8 +351,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"qkunze@example.com\",
-    \"password\": \"O[2UZ5ij-e\\/dl4m{o,\"
+    \"email\": \"demo@example.com\",
+    \"password\": \"password\"
 }"
 </code></pre></div>
 
@@ -368,8 +368,8 @@ const headers = {
 };
 
 let body = {
-    "email": "qkunze@example.com",
-    "password": "O[2UZ5ij-e\/dl4m{o,"
+    "email": "demo@example.com",
+    "password": "password"
 };
 
 fetch(url, {
@@ -461,10 +461,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="qkunze@example.com"
+               value="demo@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>qkunze@example.com</code></p>
+<p>Must be a valid email address. Example: <code>demo@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -473,10 +473,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="O[2UZ5ij-e/dl4m{o,"
+               value="password"
                data-component="body">
     <br>
-<p>Example: <code>O[2UZ5ij-e/dl4m{o,</code></p>
+<p>Example: <code>password</code></p>
         </div>
         </form>
 
@@ -775,7 +775,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"status\": \"completed\",
+    \"status\": \"active\",
     \"per_page\": 21
 }"
 </code></pre></div>
@@ -800,7 +800,7 @@ const headers = {
 };
 
 let body = {
-    "status": "completed",
+    "status": "active",
     "per_page": 21
 };
 
@@ -946,10 +946,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="GETapi-projects"
-               value="completed"
+               value="active"
                data-component="body">
     <br>
-<p>Example: <code>completed</code></p>
+<p>Example: <code>active</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>completed</code></li> <li><code>archived</code></li></ul>
         </div>
@@ -986,8 +986,8 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
+    \"name\": \"Website Redesign\",
+    \"description\": \"Revamp the marketing site before Q4.\",
     \"status\": \"active\"
 }"
 </code></pre></div>
@@ -1005,8 +1005,8 @@ const headers = {
 };
 
 let body = {
-    "name": "vmqeopfuudtdsufvyvddq",
-    "description": "Dolores dolorum amet iste laborum eius est dolor.",
+    "name": "Website Redesign",
+    "description": "Revamp the marketing site before Q4.",
     "status": "active"
 };
 
@@ -1111,10 +1111,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-projects"
-               value="vmqeopfuudtdsufvyvddq"
+               value="Website Redesign"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>Website Redesign</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1123,10 +1123,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-projects"
-               value="Dolores dolorum amet iste laborum eius est dolor."
+               value="Revamp the marketing site before Q4."
                data-component="body">
     <br>
-<p>Example: <code>Dolores dolorum amet iste laborum eius est dolor.</code></p>
+<p>Example: <code>Revamp the marketing site before Q4.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1138,7 +1138,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="active"
                data-component="body">
     <br>
-<p>Example: <code>active</code></p>
+<p>One of: active, completed, archived. Defaults to active. Example: <code>active</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>completed</code></li> <li><code>archived</code></li></ul>
         </div>
@@ -1318,9 +1318,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"vmqeopfuudtdsufvyvddq\",
-    \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"status\": \"archived\"
+    \"name\": \"Website Redesign\",
+    \"description\": \"Updated project scope.\",
+    \"status\": \"completed\"
 }"
 </code></pre></div>
 
@@ -1337,9 +1337,9 @@ const headers = {
 };
 
 let body = {
-    "name": "vmqeopfuudtdsufvyvddq",
-    "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "status": "archived"
+    "name": "Website Redesign",
+    "description": "Updated project scope.",
+    "status": "completed"
 };
 
 fetch(url, {
@@ -1460,10 +1460,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-projects--id-"
-               value="vmqeopfuudtdsufvyvddq"
+               value="Website Redesign"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>Website Redesign</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1472,10 +1472,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-projects--id-"
-               value="Dolores dolorum amet iste laborum eius est dolor."
+               value="Updated project scope."
                data-component="body">
     <br>
-<p>Example: <code>Dolores dolorum amet iste laborum eius est dolor.</code></p>
+<p>Example: <code>Updated project scope.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1484,10 +1484,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="status"                data-endpoint="PUTapi-projects--id-"
-               value="archived"
+               value="completed"
                data-component="body">
     <br>
-<p>Example: <code>archived</code></p>
+<p>One of: active, completed, archived. Example: <code>completed</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>active</code></li> <li><code>completed</code></li> <li><code>archived</code></li></ul>
         </div>
@@ -1868,11 +1868,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"vmqeopfuudtdsufvyvddq\",
-    \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
+    \"title\": \"Design the landing page\",
+    \"description\": \"First draft in Figma, then review.\",
     \"priority\": \"high\",
     \"status\": \"todo\",
-    \"due_date\": \"2026-08-02T03:08:24\"
+    \"due_date\": \"2026-09-15\"
 }"
 </code></pre></div>
 
@@ -1889,11 +1889,11 @@ const headers = {
 };
 
 let body = {
-    "title": "vmqeopfuudtdsufvyvddq",
-    "description": "Dolores dolorum amet iste laborum eius est dolor.",
+    "title": "Design the landing page",
+    "description": "First draft in Figma, then review.",
     "priority": "high",
     "status": "todo",
-    "due_date": "2026-08-02T03:08:24"
+    "due_date": "2026-09-15"
 };
 
 fetch(url, {
@@ -2010,10 +2010,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="POSTapi-projects--project_id--tasks"
-               value="vmqeopfuudtdsufvyvddq"
+               value="Design the landing page"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>Design the landing page</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2022,10 +2022,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-projects--project_id--tasks"
-               value="Dolores dolorum amet iste laborum eius est dolor."
+               value="First draft in Figma, then review."
                data-component="body">
     <br>
-<p>Example: <code>Dolores dolorum amet iste laborum eius est dolor.</code></p>
+<p>Example: <code>First draft in Figma, then review.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;
@@ -2037,7 +2037,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="high"
                data-component="body">
     <br>
-<p>Example: <code>high</code></p>
+<p>One of: low, medium, high. Defaults to medium. Example: <code>high</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>low</code></li> <li><code>medium</code></li> <li><code>high</code></li></ul>
         </div>
@@ -2051,7 +2051,7 @@ Must be one of:
                value="todo"
                data-component="body">
     <br>
-<p>Example: <code>todo</code></p>
+<p>One of: todo, in_progress, done. Defaults to todo. Example: <code>todo</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>todo</code></li> <li><code>in_progress</code></li> <li><code>done</code></li></ul>
         </div>
@@ -2062,10 +2062,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="POSTapi-projects--project_id--tasks"
-               value="2026-08-02T03:08:24"
+               value="2026-09-15"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-08-02T03:08:24</code></p>
+<p>Must be a valid date. Example: <code>2026-09-15</code></p>
         </div>
         </form>
 
@@ -2443,11 +2443,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"title\": \"vmqeopfuudtdsufvyvddq\",
-    \"description\": \"Dolores dolorum amet iste laborum eius est dolor.\",
-    \"priority\": \"low\",
+    \"title\": \"Design the landing page\",
+    \"description\": \"Second draft after feedback.\",
+    \"priority\": \"medium\",
     \"status\": \"in_progress\",
-    \"due_date\": \"2026-08-02T03:08:24\"
+    \"due_date\": \"2026-09-20\"
 }"
 </code></pre></div>
 
@@ -2464,11 +2464,11 @@ const headers = {
 };
 
 let body = {
-    "title": "vmqeopfuudtdsufvyvddq",
-    "description": "Dolores dolorum amet iste laborum eius est dolor.",
-    "priority": "low",
+    "title": "Design the landing page",
+    "description": "Second draft after feedback.",
+    "priority": "medium",
     "status": "in_progress",
-    "due_date": "2026-08-02T03:08:24"
+    "due_date": "2026-09-20"
 };
 
 fetch(url, {
@@ -2589,10 +2589,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="title"                data-endpoint="PUTapi-tasks--id-"
-               value="vmqeopfuudtdsufvyvddq"
+               value="Design the landing page"
                data-component="body">
     <br>
-<p>Must not be greater than 255 characters. Example: <code>vmqeopfuudtdsufvyvddq</code></p>
+<p>Must not be greater than 255 characters. Example: <code>Design the landing page</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2601,10 +2601,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-tasks--id-"
-               value="Dolores dolorum amet iste laborum eius est dolor."
+               value="Second draft after feedback."
                data-component="body">
     <br>
-<p>Example: <code>Dolores dolorum amet iste laborum eius est dolor.</code></p>
+<p>Example: <code>Second draft after feedback.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>priority</code></b>&nbsp;&nbsp;
@@ -2613,10 +2613,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="priority"                data-endpoint="PUTapi-tasks--id-"
-               value="low"
+               value="medium"
                data-component="body">
     <br>
-<p>Example: <code>low</code></p>
+<p>One of: low, medium, high. Example: <code>medium</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>low</code></li> <li><code>medium</code></li> <li><code>high</code></li></ul>
         </div>
@@ -2630,7 +2630,7 @@ Must be one of:
                value="in_progress"
                data-component="body">
     <br>
-<p>Example: <code>in_progress</code></p>
+<p>One of: todo, in_progress, done. Example: <code>in_progress</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>todo</code></li> <li><code>in_progress</code></li> <li><code>done</code></li></ul>
         </div>
@@ -2641,10 +2641,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="due_date"                data-endpoint="PUTapi-tasks--id-"
-               value="2026-08-02T03:08:24"
+               value="2026-09-20"
                data-component="body">
     <br>
-<p>Must be a valid date. Example: <code>2026-08-02T03:08:24</code></p>
+<p>Must be a valid date. Example: <code>2026-09-20</code></p>
         </div>
         </form>
 

@@ -48,15 +48,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vmqeopfuudtdsufvyvddq
+                  example: 'John Doe'
                 email:
                   type: string
                   description: 'Must be a valid email address. Must not be greater than 255 characters.'
-                  example: kunde.eloisa@example.com
+                  example: john@example.com
                 password:
                   type: string
-                  description: ''
-                  example: consequatur
+                  description: 'Minimum 8 characters.'
+                  example: password123
               required:
                 - name
                 - email
@@ -81,11 +81,11 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: qkunze@example.com
+                  example: demo@example.com
                 password:
                   type: string
                   description: ''
-                  example: 'O[2UZ5ij-e/dl4m{o,'
+                  example: password
               required:
                 - email
                 - password
@@ -171,7 +171,7 @@ paths:
                 status:
                   type: string
                   description: ''
-                  example: completed
+                  example: active
                   enum:
                     - active
                     - completed
@@ -198,15 +198,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vmqeopfuudtdsufvyvddq
+                  example: 'Website Redesign'
                 description:
                   type: string
                   description: ''
-                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  example: 'Revamp the marketing site before Q4.'
                   nullable: true
                 status:
                   type: string
-                  description: ''
+                  description: 'One of: active, completed, archived. Defaults to active.'
                   example: active
                   enum:
                     - active
@@ -254,16 +254,16 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vmqeopfuudtdsufvyvddq
+                  example: 'Website Redesign'
                 description:
                   type: string
                   description: ''
-                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  example: 'Updated project scope.'
                   nullable: true
                 status:
                   type: string
-                  description: ''
-                  example: archived
+                  description: 'One of: active, completed, archived.'
+                  example: completed
                   enum:
                     - active
                     - completed
@@ -364,15 +364,15 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vmqeopfuudtdsufvyvddq
+                  example: 'Design the landing page'
                 description:
                   type: string
                   description: ''
-                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  example: 'First draft in Figma, then review.'
                   nullable: true
                 priority:
                   type: string
-                  description: ''
+                  description: 'One of: low, medium, high. Defaults to medium.'
                   example: high
                   enum:
                     - low
@@ -381,7 +381,7 @@ paths:
                   nullable: true
                 status:
                   type: string
-                  description: ''
+                  description: 'One of: todo, in_progress, done. Defaults to todo.'
                   example: todo
                   enum:
                     - todo
@@ -391,7 +391,7 @@ paths:
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-08-02T03:08:24'
+                  example: '2026-09-15'
                   nullable: true
               required:
                 - title
@@ -504,23 +504,23 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: vmqeopfuudtdsufvyvddq
+                  example: 'Design the landing page'
                 description:
                   type: string
                   description: ''
-                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  example: 'Second draft after feedback.'
                   nullable: true
                 priority:
                   type: string
-                  description: ''
-                  example: low
+                  description: 'One of: low, medium, high.'
+                  example: medium
                   enum:
                     - low
                     - medium
                     - high
                 status:
                   type: string
-                  description: ''
+                  description: 'One of: todo, in_progress, done.'
                   example: in_progress
                   enum:
                     - todo
@@ -529,7 +529,7 @@ paths:
                 due_date:
                   type: string
                   description: 'Must be a valid date.'
-                  example: '2026-08-02T03:08:24'
+                  example: '2026-09-20'
                   nullable: true
     delete:
       summary: 'Delete a task'

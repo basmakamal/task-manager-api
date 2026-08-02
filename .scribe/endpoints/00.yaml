@@ -33,7 +33,7 @@ endpoints:
         name: name
         description: 'Must not be greater than 255 characters.'
         required: true
-        example: vmqeopfuudtdsufvyvddq
+        example: 'John Doe'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -44,7 +44,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address. Must not be greater than 255 characters.'
         required: true
-        example: kunde.eloisa@example.com
+        example: john@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -53,18 +53,18 @@ endpoints:
       password:
         custom: []
         name: password
-        description: ''
+        description: 'Minimum 8 characters.'
         required: true
-        example: consequatur
+        example: password123
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      name: vmqeopfuudtdsufvyvddq
-      email: kunde.eloisa@example.com
-      password: consequatur
+      name: 'John Doe'
+      email: john@example.com
+      password: password123
     fileParameters: []
     responses: []
     responseFields: []
@@ -102,7 +102,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: qkunze@example.com
+        example: demo@example.com
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -113,15 +113,15 @@ endpoints:
         name: password
         description: ''
         required: true
-        example: 'O[2UZ5ij-e/dl4m{o,'
+        example: password
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanBodyParameters:
-      email: qkunze@example.com
-      password: 'O[2UZ5ij-e/dl4m{o,'
+      email: demo@example.com
+      password: password
     fileParameters: []
     responses: []
     responseFields: []

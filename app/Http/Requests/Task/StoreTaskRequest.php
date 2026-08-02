@@ -24,4 +24,15 @@ class StoreTaskRequest extends FormRequest
             'due_date' => ['nullable', 'date'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'title' => ['example' => 'Design the landing page'],
+            'description' => ['example' => 'First draft in Figma, then review.'],
+            'priority' => ['description' => 'One of: low, medium, high. Defaults to medium.', 'example' => 'high'],
+            'status' => ['description' => 'One of: todo, in_progress, done. Defaults to todo.', 'example' => 'todo'],
+            'due_date' => ['example' => '2026-09-15'],
+        ];
+    }
 }

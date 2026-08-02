@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Task Manager API Documentation",
-        "_postman_id": "72d9fe0f-8e5f-4395-81ba-2f2d08225663",
+        "_postman_id": "8fb0341d-c87f-4ef3-9d59-1413f6731bfc",
         "description": "REST API for managing projects and tasks.",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vmqeopfuudtdsufvyvddq\",\"email\":\"kunde.eloisa@example.com\",\"password\":\"consequatur\"}"
+                            "raw": "{\"name\":\"John Doe\",\"email\":\"john@example.com\",\"password\":\"password123\"}"
                         },
                         "description": "Create a new account and get an API token.",
                         "auth": {
@@ -72,7 +72,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"qkunze@example.com\",\"password\":\"O[2UZ5ij-e\\\/dl4m{o,\"}"
+                            "raw": "{\"email\":\"demo@example.com\",\"password\":\"password\"}"
                         },
                         "description": "Exchange credentials for an API token.",
                         "auth": {
@@ -198,7 +198,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"status\":\"completed\",\"per_page\":21}"
+                            "raw": "{\"status\":\"active\",\"per_page\":21}"
                         },
                         "description": ""
                     },
@@ -246,7 +246,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"status\":\"active\"}"
+                            "raw": "{\"name\":\"Website Redesign\",\"description\":\"Revamp the marketing site before Q4.\",\"status\":\"active\"}"
                         },
                         "description": ""
                     },
@@ -335,7 +335,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"name\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"status\":\"archived\"}"
+                            "raw": "{\"name\":\"Website Redesign\",\"description\":\"Updated project scope.\",\"status\":\"completed\"}"
                         },
                         "description": ""
                     },
@@ -488,7 +488,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"priority\":\"high\",\"status\":\"todo\",\"due_date\":\"2026-08-02T03:08:24\"}"
+                            "raw": "{\"title\":\"Design the landing page\",\"description\":\"First draft in Figma, then review.\",\"priority\":\"high\",\"status\":\"todo\",\"due_date\":\"2026-09-15\"}"
                         },
                         "description": ""
                     },
@@ -647,7 +647,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"title\":\"vmqeopfuudtdsufvyvddq\",\"description\":\"Dolores dolorum amet iste laborum eius est dolor.\",\"priority\":\"low\",\"status\":\"in_progress\",\"due_date\":\"2026-08-02T03:08:24\"}"
+                            "raw": "{\"title\":\"Design the landing page\",\"description\":\"Second draft after feedback.\",\"priority\":\"medium\",\"status\":\"in_progress\",\"due_date\":\"2026-09-20\"}"
                         },
                         "description": ""
                     },

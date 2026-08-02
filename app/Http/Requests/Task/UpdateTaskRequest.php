@@ -24,4 +24,15 @@ class UpdateTaskRequest extends FormRequest
             'due_date' => ['nullable', 'date'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'title' => ['example' => 'Design the landing page'],
+            'description' => ['example' => 'Second draft after feedback.'],
+            'priority' => ['description' => 'One of: low, medium, high.', 'example' => 'medium'],
+            'status' => ['description' => 'One of: todo, in_progress, done.', 'example' => 'in_progress'],
+            'due_date' => ['example' => '2026-09-20'],
+        ];
+    }
 }

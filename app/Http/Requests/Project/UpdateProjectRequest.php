@@ -21,4 +21,13 @@ class UpdateProjectRequest extends FormRequest
             'status' => ['sometimes', Rule::enum(ProjectStatus::class)],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => ['example' => 'Website Redesign'],
+            'description' => ['example' => 'Updated project scope.'],
+            'status' => ['description' => 'One of: active, completed, archived.', 'example' => 'completed'],
+        ];
+    }
 }

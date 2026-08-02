@@ -21,4 +21,13 @@ class StoreProjectRequest extends FormRequest
             'status' => ['nullable', Rule::enum(ProjectStatus::class)],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => ['example' => 'Website Redesign'],
+            'description' => ['example' => 'Revamp the marketing site before Q4.'],
+            'status' => ['description' => 'One of: active, completed, archived. Defaults to active.', 'example' => 'active'],
+        ];
+    }
 }

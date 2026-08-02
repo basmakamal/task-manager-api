@@ -20,4 +20,14 @@ class RegisterRequest extends FormRequest
             'password' => ['required', 'confirmed', Password::defaults()],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => ['example' => 'John Doe'],
+            'email' => ['example' => 'john@example.com'],
+            'password' => ['description' => 'Minimum 8 characters.', 'example' => 'password123'],
+            'password_confirmation' => ['description' => 'Must match password.', 'example' => 'password123'],
+        ];
+    }
 }
