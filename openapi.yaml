@@ -1,0 +1,550 @@
+openapi: 3.0.3
+info:
+  title: 'Task Manager API Documentation'
+  description: 'REST API for managing projects and tasks.'
+  version: 1.0.0
+servers:
+  -
+    url: 'http://localhost'
+tags:
+  -
+    name: Authentication
+    description: "\nEndpoints for registering, logging in and logging out."
+  -
+    name: Dashboard
+    description: ''
+  -
+    name: Projects
+    description: "\nManage the authenticated user's projects."
+  -
+    name: Tasks
+    description: "\nManage tasks inside the authenticated user's projects."
+components:
+  securitySchemes:
+    default:
+      type: http
+      scheme: bearer
+      description: 'Get your token from the <b>/api/register</b> or <b>/api/login</b> endpoints and send it as a Bearer token.'
+security:
+  -
+    default: []
+paths:
+  /api/register:
+    post:
+      summary: Register
+      operationId: register
+      description: 'Create a new account and get an API token.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vmqeopfuudtdsufvyvddq
+                email:
+                  type: string
+                  description: 'Must be a valid email address. Must not be greater than 255 characters.'
+                  example: kunde.eloisa@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: consequatur
+              required:
+                - name
+                - email
+                - password
+      security: []
+  /api/login:
+    post:
+      summary: Login
+      operationId: login
+      description: 'Exchange credentials for an API token.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  description: 'Must be a valid email address.'
+                  example: qkunze@example.com
+                password:
+                  type: string
+                  description: ''
+                  example: 'O[2UZ5ij-e/dl4m{o,'
+              required:
+                - email
+                - password
+      security: []
+  /api/logout:
+    post:
+      summary: Logout
+      operationId: logout
+      description: 'Revoke the token used for the current request.'
+      parameters: []
+      responses: {  }
+      tags:
+        - Authentication
+  /api/dashboard:
+    get:
+      summary: 'Dashboard stats'
+      operationId: dashboardStats
+      description: 'Returns project and task counters for the authenticated user.'
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Dashboard
+  /api/projects:
+    get:
+      summary: 'List projects'
+      operationId: listProjects
+      description: ''
+      parameters:
+        -
+          in: query
+          name: status
+          description: 'Filter by status: active, completed or archived.'
+          example: active
+          required: false
+          schema:
+            type: string
+            description: 'Filter by status: active, completed or archived.'
+            example: active
+        -
+          in: query
+          name: per_page
+          description: 'Results per page (max 100).'
+          example: 10
+          required: false
+          schema:
+            type: integer
+            description: 'Results per page (max 100).'
+            example: 10
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Projects
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                status:
+                  type: string
+                  description: ''
+                  example: archived
+                  enum:
+                    - active
+                    - completed
+                    - archived
+                per_page:
+                  type: integer
+                  description: 'Must be at least 1. Must not be greater than 100.'
+                  example: 21
+    post:
+      summary: 'Create a project'
+      operationId: createAProject
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Projects
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vmqeopfuudtdsufvyvddq
+                description:
+                  type: string
+                  description: ''
+                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  nullable: true
+                status:
+                  type: string
+                  description: ''
+                  example: active
+                  enum:
+                    - active
+                    - completed
+                    - archived
+                  nullable: true
+              required:
+                - name
+  '/api/projects/{id}':
+    get:
+      summary: 'View a project'
+      operationId: viewAProject
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Projects
+    put:
+      summary: 'Update a project'
+      operationId: updateAProject
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Projects
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vmqeopfuudtdsufvyvddq
+                description:
+                  type: string
+                  description: ''
+                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  nullable: true
+                status:
+                  type: string
+                  description: ''
+                  example: active
+                  enum:
+                    - active
+                    - completed
+                    - archived
+    delete:
+      summary: 'Delete a project'
+      operationId: deleteAProject
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Projects
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the project.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  '/api/projects/{project_id}/tasks':
+    get:
+      summary: 'List tasks of a project'
+      operationId: listTasksOfAProject
+      description: ''
+      parameters:
+        -
+          in: query
+          name: status
+          description: 'Filter by status: todo, in_progress or done.'
+          example: done
+          required: false
+          schema:
+            type: string
+            description: 'Filter by status: todo, in_progress or done.'
+            example: done
+        -
+          in: query
+          name: priority
+          description: 'Filter by priority: low, medium or high.'
+          example: medium
+          required: false
+          schema:
+            type: string
+            description: 'Filter by priority: low, medium or high.'
+            example: medium
+        -
+          in: query
+          name: search
+          description: 'Search in task titles.'
+          example: bug
+          required: false
+          schema:
+            type: string
+            description: 'Search in task titles.'
+            example: bug
+        -
+          in: query
+          name: per_page
+          description: 'Results per page (max 100).'
+          example: 10
+          required: false
+          schema:
+            type: integer
+            description: 'Results per page (max 100).'
+            example: 10
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Tasks
+    post:
+      summary: 'Create a task'
+      operationId: createATask
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Tasks
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vmqeopfuudtdsufvyvddq
+                description:
+                  type: string
+                  description: ''
+                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  nullable: true
+                priority:
+                  type: string
+                  description: ''
+                  example: high
+                  enum:
+                    - low
+                    - medium
+                    - high
+                  nullable: true
+                status:
+                  type: string
+                  description: ''
+                  example: todo
+                  enum:
+                    - todo
+                    - in_progress
+                    - done
+                  nullable: true
+                due_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2026-08-02T02:57:31'
+                  nullable: true
+              required:
+                - title
+    parameters:
+      -
+        in: path
+        name: project_id
+        description: 'The ID of the project.'
+        example: 1
+        required: true
+        schema:
+          type: integer
+  /api/tasks:
+    get:
+      summary: 'List all tasks'
+      operationId: listAllTasks
+      description: "Returns tasks across all of the user's projects."
+      parameters:
+        -
+          in: query
+          name: status
+          description: 'Filter by status: todo, in_progress or done.'
+          example: todo
+          required: false
+          schema:
+            type: string
+            description: 'Filter by status: todo, in_progress or done.'
+            example: todo
+        -
+          in: query
+          name: priority
+          description: 'Filter by priority: low, medium or high.'
+          example: high
+          required: false
+          schema:
+            type: string
+            description: 'Filter by priority: low, medium or high.'
+            example: high
+        -
+          in: query
+          name: search
+          description: 'Search in task titles.'
+          example: deploy
+          required: false
+          schema:
+            type: string
+            description: 'Search in task titles.'
+            example: deploy
+        -
+          in: query
+          name: per_page
+          description: 'Results per page (max 100).'
+          example: 10
+          required: false
+          schema:
+            type: integer
+            description: 'Results per page (max 100).'
+            example: 10
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Tasks
+  '/api/tasks/{id}':
+    get:
+      summary: 'View a task'
+      operationId: viewATask
+      description: ''
+      parameters: []
+      responses:
+        401:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Unauthenticated.
+                properties:
+                  message:
+                    type: string
+                    example: Unauthenticated.
+      tags:
+        - Tasks
+    put:
+      summary: 'Update a task'
+      operationId: updateATask
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Tasks
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                title:
+                  type: string
+                  description: 'Must not be greater than 255 characters.'
+                  example: vmqeopfuudtdsufvyvddq
+                description:
+                  type: string
+                  description: ''
+                  example: 'Dolores dolorum amet iste laborum eius est dolor.'
+                  nullable: true
+                priority:
+                  type: string
+                  description: ''
+                  example: low
+                  enum:
+                    - low
+                    - medium
+                    - high
+                status:
+                  type: string
+                  description: ''
+                  example: done
+                  enum:
+                    - todo
+                    - in_progress
+                    - done
+                due_date:
+                  type: string
+                  description: 'Must be a valid date.'
+                  example: '2026-08-02T02:57:31'
+                  nullable: true
+    delete:
+      summary: 'Delete a task'
+      operationId: deleteATask
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Tasks
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the task.'
+        example: 1
+        required: true
+        schema:
+          type: integer
