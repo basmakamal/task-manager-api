@@ -12,8 +12,20 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
+/**
+ * @group Authentication
+ *
+ * Endpoints for registering, logging in and logging out.
+ */
 class AuthController extends Controller
 {
+    /**
+     * Register
+     *
+     * Create a new account and get an API token.
+     *
+     * @unauthenticated
+     */
     public function register(RegisterRequest $request): JsonResponse
     {
         $user = User::create($request->validated());
@@ -25,6 +37,13 @@ class AuthController extends Controller
         ], 201);
     }
 
+    /**
+     * Login
+     *
+     * Exchange credentials for an API token.
+     *
+     * @unauthenticated
+     */
     public function login(LoginRequest $request): JsonResponse
     {
         $user = User::where('email', $request->email)->first();
@@ -42,6 +61,11 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+     * Logout
+     *
+     * Revoke the token used for the current request.
+     */
     public function logout(Request $request): JsonResponse
     {
         $request->user()->currentAccessToken()->delete();

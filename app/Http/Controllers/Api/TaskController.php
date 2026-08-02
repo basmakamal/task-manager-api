@@ -16,12 +16,27 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Validation\Rule;
 
+/**
+ * @group Tasks
+ *
+ * Manage tasks inside the authenticated user's projects.
+ */
 class TaskController extends Controller
 {
     public function __construct(protected TaskService $taskService)
     {
     }
 
+    /**
+     * List all tasks
+     *
+     * Returns tasks across all of the user's projects.
+     *
+     * @queryParam status Filter by status: todo, in_progress or done. Example: todo
+     * @queryParam priority Filter by priority: low, medium or high. Example: high
+     * @queryParam search Search in task titles. Example: deploy
+     * @queryParam per_page Results per page (max 100). Example: 10
+     */
     public function index(Request $request): AnonymousResourceCollection
     {
         $filters = $this->validateFilters($request);
@@ -31,6 +46,14 @@ class TaskController extends Controller
         );
     }
 
+    /**
+     * List tasks of a project
+     *
+     * @queryParam status Filter by status: todo, in_progress or done. Example: done
+     * @queryParam priority Filter by priority: low, medium or high. Example: medium
+     * @queryParam search Search in task titles. Example: bug
+     * @queryParam per_page Results per page (max 100). Example: 10
+     */
     public function indexForProject(Request $request, Project $project): AnonymousResourceCollection
     {
         $this->authorize('view', $project);
@@ -42,6 +65,9 @@ class TaskController extends Controller
         );
     }
 
+    /**
+     * Create a task
+     */
     public function store(StoreTaskRequest $request, Project $project): JsonResponse
     {
         $this->authorize('update', $project);
@@ -53,6 +79,9 @@ class TaskController extends Controller
             ->setStatusCode(201);
     }
 
+    /**
+     * View a task
+     */
     public function show(Task $task): TaskResource
     {
         $this->authorize('view', $task);
@@ -60,6 +89,9 @@ class TaskController extends Controller
         return new TaskResource($task->load('project'));
     }
 
+    /**
+     * Update a task
+     */
     public function update(UpdateTaskRequest $request, Task $task): TaskResource
     {
         $this->authorize('update', $task);
@@ -69,6 +101,9 @@ class TaskController extends Controller
         );
     }
 
+    /**
+     * Delete a task
+     */
     public function destroy(Task $task): JsonResponse
     {
         $this->authorize('delete', $task);

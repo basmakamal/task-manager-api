@@ -14,12 +14,23 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use Illuminate\Validation\Rule;
 
+/**
+ * @group Projects
+ *
+ * Manage the authenticated user's projects.
+ */
 class ProjectController extends Controller
 {
     public function __construct(protected ProjectService $projectService)
     {
     }
 
+    /**
+     * List projects
+     *
+     * @queryParam status Filter by status: active, completed or archived. Example: active
+     * @queryParam per_page Results per page (max 100). Example: 10
+     */
     public function index(Request $request): AnonymousResourceCollection
     {
         $this->authorize('viewAny', Project::class);
@@ -34,6 +45,9 @@ class ProjectController extends Controller
         );
     }
 
+    /**
+     * Create a project
+     */
     public function store(StoreProjectRequest $request): JsonResponse
     {
         $project = $this->projectService->create($request->user(), $request->validated());
@@ -43,6 +57,9 @@ class ProjectController extends Controller
             ->setStatusCode(201);
     }
 
+    /**
+     * View a project
+     */
     public function show(Project $project): ProjectResource
     {
         $this->authorize('view', $project);
@@ -50,6 +67,9 @@ class ProjectController extends Controller
         return new ProjectResource($project->loadCount('tasks'));
     }
 
+    /**
+     * Update a project
+     */
     public function update(UpdateProjectRequest $request, Project $project): ProjectResource
     {
         $this->authorize('update', $project);
@@ -59,6 +79,9 @@ class ProjectController extends Controller
         );
     }
 
+    /**
+     * Delete a project
+     */
     public function destroy(Project $project): JsonResponse
     {
         $this->authorize('delete', $project);
